@@ -1,0 +1,30 @@
+$green-color: #32A361;
+
+.protest-guerrilla-regular {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.border-green {
+  border-color: $green-color !important;
+}
+
+.bg-green {
+  background-color: $green-color;
+}
+
+@media(min-width: 576px) {
+  header:after {
+    content: "";
+    width: 10vw;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM0IiBoZWlnaHQ9IjI2IiB2aWV3Qm94PSIwIDAgMzM0IDI2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8bGluZSB4MT0iNDAiIHkxPSIyIiB4Mj0iMzM0IiB5Mj0iMiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxsaW5lIHkxPSIyNCIgeDI9IjMzNCIgeTI9IjI0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg==);
+    height: 26px;
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 18px;
+    display: block;
+    right: 0;
+  } 
+}
