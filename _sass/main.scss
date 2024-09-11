@@ -1,5 +1,9 @@
 $green-color: #32A361;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .protest-guerrilla-regular {
   font-family: "Protest Guerrilla", sans-serif;
   font-weight: 400;
@@ -27,4 +31,24 @@ $green-color: #32A361;
     display: block;
     right: 0;
   } 
+}
+
+.video-wrapper {
+  height: 400vh;
+  .fact {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      width: 100%;
+      padding: 20px 20px;
+      background-color: #FFFFFF;
+      border-radius: 13px;
+      max-width: 360px;
+      text-align: center;
+      margin: 0;
+    }
+  }
 }
