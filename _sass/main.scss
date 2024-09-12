@@ -18,6 +18,10 @@ html {
   background-color: $green-color;
 }
 
+.text-green {
+  color: $green-color;
+}
+
 @media(min-width: 576px) {
   header:after {
     content: "";
