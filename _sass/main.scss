@@ -22,6 +22,19 @@ html {
   color: $green-color;
 }
 
+// animated link arrow on hover
+a {
+  svg.bi-arrow-right {
+    transition: 0.6s right linear;
+    right: 0;
+  }
+  &:hover {
+    svg.bi-arrow-right {
+      right: -5px;
+    }
+  }
+}
+
 @media(min-width: 576px) {
   header:after {
     content: "";
