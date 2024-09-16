@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+  // scrolly video
   new ScrollyVideo({
     scrollyVideoContainer: "scrolly-video",
     src: "/assets/videos/Blackwater-park-Navan-video.mp4"
@@ -14,3 +16,4 @@
   }).addTo(map);
 
   var marker = L.marker([lat,long]).addTo(map);
+});
