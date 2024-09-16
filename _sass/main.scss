@@ -83,3 +83,27 @@ a {
     height: 100%;
   }
 }
+
+
+@media(min-width: 768px){
+  .column-with-lines:before,
+  .column-with-lines:after{
+    content:  "";
+    height: 60%;
+    width: 4px;
+    display: block;
+    background: #31a361;
+    position: absolute;
+    top: 20%;
+  }
+
+  .column-with-lines:before {
+    left: -2px;
+  }
+
+  .column-with-lines:after {
+    right: -2px;
+  }
+}
+
+
