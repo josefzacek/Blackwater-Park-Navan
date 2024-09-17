@@ -50,6 +50,91 @@ a {
   } 
 }
 
+// animated svg in banner
+/* Google chrome */
+@-webkit-keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: $green-color;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: $green-color;
+  }
+}
+/* Most browsers */
+@keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: $green-color;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: $green-color;
+  }
+}
+
+// animated mouse down scroll
+.animated-svg-holder {
+  svg {
+    max-width: 80vw;
+    margin: 0 auto;
+    display: block;
+  }
+  .moving-mouse-holder {
+    width: 170px;
+    position: absolute;
+    bottom: 15vh;
+    .mouse {
+      width: 26px;
+      height: 40px;
+      position: relative;
+      right: 0;
+      border-radius: 18px;
+      border: 2px solid #000000;
+      .mouse-button {
+        background-color: #000000;
+        width: 4px;
+        height: 10px;
+        border-radius: 2px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        margin: 0 0 0 -2px;
+        animation: mouse-scroll 1s infinite alternate;
+      }
+    }
+    .text {
+      margin-top: -30px;
+      margin-left: 40px;
+      color: #000000;
+      font-size: 12px;
+      line-height: 1em;
+    }
+  }
+}
+
+/* Google chrome */
+@-webkit-keyframes mouse-scroll {
+  to {
+    transform: translate(0, 6px) scale(1, 0.8);
+  }
+}
+/* Most browsers */
+@keyframes mouse-scroll {
+  to {
+    transform: translate(0, 6px) scale(1, 0.8);
+  }
+}
+
 .video-wrapper {
   height: 400vh;
   .fact {
