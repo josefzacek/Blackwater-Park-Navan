@@ -21,16 +21,37 @@ $( document ).ready(function() {
     scrollyVideoContainer: "scrolly-video",
     src: "/assets/videos/Blackwater-park-Navan-video.mp4"
   });
-
-  // leafletjs map
-  var lat = 53.662161;
-  var long = -6.695038;
-  var map = L.map('map').setView([lat,long], 12);
-      
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-
-  var marker = L.marker([lat,long]).addTo(map);
 });
+
+// load map when it comes to view
+var mapInitialized = false;
+function onSectionVisible(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (mapInitialized == false){
+        // leafletjs map
+        var lat = 53.662161;
+        var long = -6.695038;
+        var map = L.map('map').setView([lat,long], 12);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([lat,long]).addTo(map);
+        mapInitialized = true;
+      }
+    }
+  });
+}
+
+// Target the specific section
+const targetSection = document.getElementById('map');
+
+// Create an intersection observer
+const observer = new IntersectionObserver(onSectionVisible, {
+  root: null, // Use the viewport as the root
+  threshold: 0 // Execute when 0% of the target is visible, comes to view
+});
+
+// Observe the target section
+observer.observe(targetSection);
