@@ -33,7 +33,10 @@ function onSectionVisible(entries, observer) {
         // leafletjs map
         var lat = 53.662161;
         var long = -6.695038;
-        var map = L.map('map').setView([lat,long], 12);
+        var map = L.map('map', {
+          dragging: !L.Browser.mobile,
+          tap: !L.Browser.mobile
+        }).setView([lat,long], 12);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
