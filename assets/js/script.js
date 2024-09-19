@@ -1,7 +1,8 @@
 $( document ).ready(function() {
   // animated svg
-  function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
-    let paths = document.querySelectorAll("path");
+  function setTextAnimation(element, delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
+    let svgElement = document.getElementById(element);
+    let paths = svgElement.querySelectorAll("path");
     let mode=repeat?'infinite':'forwards'
     for (let i = 0; i < paths.length; i++) {
       const path = paths[i];
@@ -14,7 +15,7 @@ $( document ).ready(function() {
       path.style["animation-delay"] = `${i * delay}s`;
     }
   }
-  setTextAnimation(0.1,5.9,2,'ease','#000000',true);
+  setTextAnimation("animated-svg-text",0.1,5.9,2,'ease','#000000',true);
 
   // scrolly video
   new ScrollyVideo({
