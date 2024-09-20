@@ -1,3 +1,6 @@
+// init AOS (animate on scroll - https://michalsnik.github.io/aos/ )
+AOS.init();
+
 $( document ).ready(function() {
   // animated svg
   function setTextAnimation(element, delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
