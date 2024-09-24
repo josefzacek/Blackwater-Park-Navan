@@ -1,6 +1,15 @@
 // init AOS (animate on scroll - https://michalsnik.github.io/aos/ )
 AOS.init();
 
+
+// reload AOS when every lazy loaded image loads
+document.querySelectorAll('img').forEach(function(img) {
+  img.addEventListener('load', function() {
+    AOS.refresh();
+    console.log("ref")
+  });
+});
+
 $( document ).ready(function() {
   // animated svg
   function setTextAnimation(element, delay, duration, strokeWidth, timingFunction, strokeColor,repeat) {
